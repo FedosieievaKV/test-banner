@@ -1,0 +1,42 @@
+//-----------------------------------------
+// Banner Styles
+//-----------------------------------------
+.banner {
+    width: 100%;
+    background: url(../../src/img/background-dot.png) 10px 10px / 23px 23px repeat, linear-gradient(180deg, $color-primary 1.09%, $color-secondary 100%);
+    background-blend-mode: screen, normal;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        @include px-to-rem(padding-top, 8);
+        @include px-to-rem(padding-bottom, 16);
+    }
+    &__top {
+        @include px-to-rem(padding-bottom, 10);
+    }
+    &__link {
+        display: inline-block;
+        @include reset-link;
+        opacity: .5;
+        transition: opacity .3s ease-in-out;
+        img {
+            width: auto;
+            max-height: 120px;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: 1;
+        }
+    }
+    &__title {
+        color: $color-white;
+        @include px-to-rem(font-size, 20);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -5px;
+        text-transform: capitalize;
+    }
+}
