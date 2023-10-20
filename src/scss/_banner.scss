@@ -39,4 +39,24 @@
         letter-spacing: -5px;
         text-transform: capitalize;
     }
+    @include media(null, $desktop) {
+        &__title {
+            @include px-to-rem(font-size, 15);
+        }
+    }
+    @include media(null, $tablet-portrait) {
+        &__content {
+            min-height: 0;
+            @include px-to-rem(padding-top, 4);
+            @include px-to-rem(padding-bottom, 4);
+        }
+        &__link {
+            img {
+                max-height: 60px;
+            }
+        }
+        &__title {
+            @include px-to-rem(font-size, 7);
+        }
+    }
 }
