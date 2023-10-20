@@ -1,0 +1,64 @@
+//-----------------------------------------
+// Mixins
+//-----------------------------------------
+
+// Media Queries
+@mixin media($min, $max: null, $media: "screen", $orientation: null) {
+    @if $orientation == null {
+        @if $max == null and $min != null {
+            @media #{$media} and (min-width: #{$min}) {
+                @content;
+            }
+        } @else if $min == null and $max != null {
+            @media #{$media} and (max-width: #{($max - 1)}) {
+                @content;
+            }
+        } @else if $min == null and $max == null {
+            @media #{$media} {
+                @content;
+            }
+        } @else {
+            @media #{$media} and (min-width: #{$min}) and (max-width: #{($max - 1)}) {
+                @content;
+            }
+        }
+    } @else {
+        @if $max == null and $min != null {
+            @media #{$media} and (min-width: #{$min}) and (orientation: #{$orientation}) {
+                @content;
+            }
+        } @else if $min == null and $max != null {
+            @media #{$media} and (max-width: #{($max - 1)}) and (orientation: #{$orientation}) {
+                @content;
+            }
+        } @else if $min == null and $max == null and $orientation == null {
+            @media #{$media} {
+                @content;
+            }
+        } @else {
+            @media #{$media} and (min-width: #{$min}) and (max-width: #{($max - 1)}) and (orientation: #{$orientation}) {
+                @content;
+            }
+        }
+    }
+}
+
+// Reset Link
+@mixin reset-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+    }
+}
+
+// PX to REMS Mixing
+@mixin px-to-rem($property, $val) {
+    #{$property}: ($val * 10) + px;
+    #{$property}: ($val / 1.6) + rem;
+}

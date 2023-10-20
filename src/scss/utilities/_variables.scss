@@ -1,0 +1,32 @@
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+
+//Typography
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+$font-body: 'Source Sans Pro', sans-serif;
+$font-heading: 'Inter', sans-serif;
+
+$line-height-body: 1.6;
+
+//Media Query Breakpoints
+$desktop-large: 1800px;
+$desktop: 1200px;
+$tablet-landscape: 992px;
+$tablet-portrait: 768px;
+$phone-landscape: 576px;
+
+// Container width
+$container: 1300px;
+
+$gutter: 30px;
+$gutter-mobile: 15px;
+
+// Color vars
+$color-primary: #5C04CB;
+$color-secondary: #06001E;
+
+$color-black: #000;
+$color-gray: #56525B;
+$color-white: #fff;
