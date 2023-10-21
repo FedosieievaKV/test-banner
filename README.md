@@ -17,3 +17,6 @@ Compile and build all assets:
 ```bash
 npm run build
 ```
+
+## Animations documentation:
+[Animate.css](https://animate.style/)

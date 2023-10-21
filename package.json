@@ -18,6 +18,7 @@
     "browser-sync": "^2.26.7",
     "browserlist": "^1.0.1",
     "cssnano": "^4.1.11",
+    "frontend-dependencies": "^2.0.0",
     "node-sass": "^8.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
@@ -39,5 +40,14 @@
     "serve": "browser-sync start --server --files='./*.html,dist/css/*.css'",
     "watch": "run-p serve watch:css",
     "watch:css": "onchange \"src/scss\" -- run-p build:scss"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  },
+  "frontendDependencies": {
+    "target": "dist/",
+    "packages": {
+      "animate.css": "^4.1.1"
+    }
   }
 }
