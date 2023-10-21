@@ -40,6 +40,10 @@
         text-transform: capitalize;
     }
     @include media(null, $desktop) {
+        &__content {
+            @include px-to-rem(padding-top, 6);
+            @include px-to-rem(padding-bottom, 10);
+        }
         &__title {
             @include px-to-rem(font-size, 15);
         }
@@ -49,6 +53,9 @@
             min-height: 0;
             @include px-to-rem(padding-top, 4);
             @include px-to-rem(padding-bottom, 4);
+        }
+        &__top {
+            @include px-to-rem(padding-bottom, 5);
         }
         &__link {
             img {
