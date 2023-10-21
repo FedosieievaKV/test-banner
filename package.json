@@ -17,6 +17,7 @@
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.26.7",
     "browserlist": "^1.0.1",
+    "cssnano": "^4.1.11",
     "node-sass": "^8.0.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
@@ -28,14 +29,15 @@
     "stylelint-scss": "^3.17.2"
   },
   "scripts": {
-    "build": "run-p build:scss clean",
+    "build": "run-p build:scss frontend clean",
     "build:scss": "run-s scss optimizecss",
     "clean": "rimraf dist/",
+    "frontend": "frontend-dependencies",
     "lint:scss": "./node_modules/.bin/stylelint 'src/scss/**/*.scss' --syntax scss || true",
-    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.min.css --use autoprefixer",
+    "optimizecss": "postcss dist/css/style.css -c postcss.config.js -o dist/css/style.min.css",
     "scss": "node-sass src/scss/style.scss -o dist/css --source-map-root \"file://${PWD}/\" --source-map-embed true",
-    "serve": "browser-sync start --server --files='./*.html,./*.css'",
+    "serve": "browser-sync start --server --files='./*.html,dist/css/*.css'",
     "watch": "run-p serve watch:css",
-    "watch:css": "onchange 'src/scss' -- run-p lint:scss build:scss"
+    "watch:css": "onchange \"src/scss\" -- run-p build:scss"
   }
 }
